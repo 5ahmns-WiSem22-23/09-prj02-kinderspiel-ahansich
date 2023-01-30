@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MyGame/Scenes/FirstScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/MyGame/Scenes/MainScene.unity
+    guid: 88944057db0f84008bc2e2dca9932d82
+  - enabled: 1
+    path: Assets/MyGame/Scenes/LastScene.unity
+    guid: fb2e362a6927948db96b2edd61149b2f
   m_configObjects: {}
