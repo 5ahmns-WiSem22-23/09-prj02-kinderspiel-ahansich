@@ -1,9 +1,21 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainSceneManager : MonoBehaviour
 {
-    public static string winner;
+
+    public enum Item
+    {
+        Fish;
+        Boat
+    }
+
+    public static Item currentWinner;
+
+    public int moveAmount;
+
+    public static int fishCount;
 
     public GameObject fishRed;
     public GameObject fishBlue;
@@ -11,11 +23,10 @@ public class MainSceneManager : MonoBehaviour
     public GameObject fishYellow;
     public GameObject boat;
 
-    int progressRed;
-    int progressGreen;
-    int progressBlue;
-    int progressYellow;
-    int progressBoat;
+    private void Start()
+    {
+        fishCount = 4;
+    }
 
     private void Update()
     {
@@ -28,8 +39,15 @@ public class MainSceneManager : MonoBehaviour
 
     void MoveItem(GameObject item)
     {
-        item.transform.position = new Vector3(10, item.transform.position.y, item.transform.position.z);
+        item.transform.position = new Vector3(item.transform.position.x + moveAmount, item.transform.position.y, item.transform.position.z);
     }
+
+    public void GameOver(Item winner)
+    {
+        currentWinner = winner;
+        SceneManager.LoadScene("LastScene");
+    }
+
 
     void RollDice()
     {
@@ -39,34 +57,73 @@ public class MainSceneManager : MonoBehaviour
             {
             case 1:
                 // rot
+                try
+                {
                 MoveItem(fishRed);
-                progressRed++;
+                }
+                catch
+                {
+                    RollDice();
+                }
                 break;
+
             case 2:
                 // grün
+                try
+                {
                 MoveItem(fishGreen);
-                progressGreen++;
+                }
+                catch
+                {
+                    RollDice();
+                }
                 break;
+
             case 3:
                 // blau
+                try
+                {
                 MoveItem(fishBlue);
-                progressBlue++;
+                }
+                catch
+                {
+                    RollDice();
+                }
                 break;
+
             case 4:
                 // gelb
+                try
+                {
                 MoveItem(fishYellow);
-                progressYellow++;
+                }
+                catch
+                {
+                    RollDice();
+                }
                 break;
+
             case 5:
                 // boot 1
                 MoveItem(boat);
-                progressBoat++;
                 break;
+
             case 6:
                 // boot 2
                 MoveItem(boat);
-                progressBoat++;
                 break;
+            }
+    }
+
+    public void CheckForWin()
+    {
+        fishCount--;
+
+        if (fishCount <= 0)
+        {
+            GameOver(Item.Boat)
         }
     }
+
+
 }
