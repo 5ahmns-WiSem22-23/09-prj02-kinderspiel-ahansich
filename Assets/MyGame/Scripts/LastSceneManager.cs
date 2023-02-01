@@ -8,7 +8,7 @@ public class LastSceneManager : MonoBehaviour
 
     private void Start()
     {
-        status.text = MainSceneManager.winner == MainSceneManager.Item.Boat ? "Das Boot ist der Sieger" : MainSceneManager.fishCount <= 2 ? "Unentschieden" : "Die Fische sind die Sieger";
+        status.text = MainSceneManager.currentWinner == MainSceneManager.Item.Boat ? "Das Boot ist der Sieger" : MainSceneManager.fishCount <= 2 ? "Unentschieden" : "Die Fische sind die Sieger";
     }
 
     public void PressRestart()

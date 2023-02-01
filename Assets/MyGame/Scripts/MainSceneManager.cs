@@ -17,8 +17,6 @@ public class MainSceneManager : MonoBehaviour
 
     public static int fishCount;
 
-    public static Item winner;
-
     public GameObject fishRed;
     public GameObject fishBlue;
     public GameObject fishGreen;

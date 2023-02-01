@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 2064540746}
   - component: {fileID: 2064540745}
   m_Layer: 5
-  m_Name: Titel
+  m_Name: Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -746,7 +746,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -213.9}
-  m_SizeDelta: {x: 826.923, y: 120.414}
+  m_SizeDelta: {x: 1755.417, y: 120.414}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2064540745
 MonoBehaviour:

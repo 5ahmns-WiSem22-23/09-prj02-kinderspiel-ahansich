@@ -21,8 +21,10 @@ public class Controller : MonoBehaviour
 
             case MainSceneManager.Item.Fish:
 
+
                 if (collision.gameObject.CompareTag("Border"))
                 {
+                Debug.Log("Fisch hat Border berührt");
                     gm.GameOver(MainSceneManager.Item.Fish);
                 }
                 break;
