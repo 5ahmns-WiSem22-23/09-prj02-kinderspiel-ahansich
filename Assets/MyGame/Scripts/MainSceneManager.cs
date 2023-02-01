@@ -7,7 +7,7 @@ public class MainSceneManager : MonoBehaviour
 
     public enum Item
     {
-        Fish;
+        Fish,
         Boat
     }
 
@@ -16,6 +16,8 @@ public class MainSceneManager : MonoBehaviour
     public int moveAmount;
 
     public static int fishCount;
+
+    public static Item winner;
 
     public GameObject fishRed;
     public GameObject fishBlue;
@@ -33,7 +35,6 @@ public class MainSceneManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             RollDice();
-            Debug.Log("hjkfb");
         }
     }
 
@@ -63,7 +64,7 @@ public class MainSceneManager : MonoBehaviour
                 }
                 catch
                 {
-                    RollDice();
+                    MoveItem(boat);
                 }
                 break;
 
@@ -75,7 +76,7 @@ public class MainSceneManager : MonoBehaviour
                 }
                 catch
                 {
-                    RollDice();
+                    MoveItem(boat);
                 }
                 break;
 
@@ -87,7 +88,7 @@ public class MainSceneManager : MonoBehaviour
                 }
                 catch
                 {
-                    RollDice();
+                    MoveItem(boat);
                 }
                 break;
 
@@ -99,7 +100,7 @@ public class MainSceneManager : MonoBehaviour
                 }
                 catch
                 {
-                    RollDice();
+                    MoveItem(boat);
                 }
                 break;
 
@@ -121,7 +122,7 @@ public class MainSceneManager : MonoBehaviour
 
         if (fishCount <= 0)
         {
-            GameOver(Item.Boat)
+            GameOver(Item.Boat);
         }
     }
 
